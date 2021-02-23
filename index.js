@@ -12,6 +12,13 @@ const people = [
     lastName: 'Nepe',
     email: 'cn@gmail.com',
     phone: '222-222-2222'
+  },
+  {
+    id: 3,
+    firstName: 'john',
+    lastName: 'doe',
+    email: 'jd@gmail.com',
+    phone: '333-333-3333'
   }
 ];
 
@@ -22,7 +29,7 @@ class PeoplePrinter{
     this.people = people;
 
     this.printBetter = () => {
-      console.log(this.people.map(person => `${person.firstName} ${person.lastName}`)
+      console.log(this.people.map(person => `${person.firstName} ${person.email}`)
       );
     }
   }
@@ -48,3 +55,8 @@ function doIt(fn) {
 }
 
 doIt(printer.printBetter);
+
+// Object and Array destructuring
+//const firstPerson = people[2];
+const [_, { firstName }] = people;
+console.log(firstName);
