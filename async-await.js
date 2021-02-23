@@ -7,10 +7,17 @@ const fetch = require('node-fetch');
 // }
 
 async function printJoke(){
-  const response = await fetch('http://api.icndb.com/jokes/random');
-  const data = await response.json();
+  try 
+  {
+    const response = await fetch('http://api.icndb.com/jokes/random');
+    const data = await response.json();
 
-  console.log(data.value.joke);
+    console.log(data.value.joke);
+  } 
+  catch (err) 
+  {
+    console.log(err.message);
+  }
 }
 
 printJoke();
