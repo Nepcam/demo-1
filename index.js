@@ -1,4 +1,4 @@
-var people = [
+const people = [
   {
     id: 1,
     firstName: 'Pae',
@@ -15,20 +15,36 @@ var people = [
   }
 ];
 
-
 // make a class to print the people array
 class PeoplePrinter{
+  // this is the setup
   constructor(people){
     this.people = people;
+
+    this.printBetter = () => {
+      console.log(this.people.map(person => `${person.firstName} ${person.lastName}`)
+      );
+    }
   }
+
 
   print(){
     // within the print function, we can map through another created function (person) and return the firstName  
-    console.log(this.people.map(function(person){
-      return person.firstName;
-    }));
+    // console.log(this.people.map(function(person){
+    //   return person.firstName;)
+
+    // same function but using the Fat arrow (person) function
+      console.log(this.people.map((person) => `${person.firstName} ${person.lastName}`)
+    );
   }
 }
 
-var printer = new PeoplePrinter(people)
-printer.print();
+// here we are using the PeoplePrinter class called printer and attaching the print() to it
+const printer = new PeoplePrinter(people)
+//printer.print();
+
+function doIt(fn) {
+  fn()
+}
+
+doIt(printer.printBetter);
