@@ -58,5 +58,6 @@ doIt(printer.printBetter);
 
 // Object and Array destructuring
 //const firstPerson = people[2];
-const [_, { firstName }] = people;
+const [_, { firstName }, ...others] = people; 
 console.log(firstName);
+console.log(others);

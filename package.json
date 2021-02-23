@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/Nepcam/demo-1#readme",
   "dependencies": {
+    "node-fetch": "^2.6.1",
     "people": "^1.0.0"
   }
 }
