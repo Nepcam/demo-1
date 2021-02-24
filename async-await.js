@@ -10,9 +10,13 @@ async function printJoke(){
   try 
   {
     const response = await fetch('http://api.icndb.com/jokes/random');
-    const data = await response.json();
+    if (response.ok) 
+    {
+      const data = await response.json();
 
-    console.log(data.value.joke);
+      console.log(data.value.joke);
+    }
+    
   } 
   catch (err) 
   {
